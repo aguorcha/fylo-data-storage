@@ -25,6 +25,6 @@
   
 </template>
 
-<!-- <style scoped>
-rounded-tl-lg rounded-tr-full rounded-br-lg rounded-bl-lg
-</style> -->
+<style scoped>
+
+</style>

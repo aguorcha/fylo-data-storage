@@ -3,17 +3,11 @@
 @import 'tailwindcss/utilities';
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@font-face {
-  font-family: 'Raleway';
-  src:  url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap') format('woff2'),
-        url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap') format('woff');
-  font-weight: 100 900;
-  font-style: normal italic;
-}
 
 body {
   margin: 0;
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
 }
