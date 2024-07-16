@@ -7,8 +7,10 @@ import DataComponent from './components/DataComponent.vue'
   <div class="h-screen">
     <div class="color-background absolute top-0 left-0 w-full h-full z-1"></div>
     <div class="image-background absolute top-0 left-0 w-full h-full bg-[url('src/assets/images/bg-mobile.png')] lg:bg-[url('src/assets/images/bg-desktop.png')] bg-cover lg:bg-contain bg-no-repeat z-2"></div>
-    <header-component></header-component>
-    <data-component></data-component>
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-center lg:pt-20">
+      <header-component class="w-full"></header-component>
+      <data-component class="w-full"></data-component>
+    </div>
   </div> 
 </template>
 

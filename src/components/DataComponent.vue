@@ -21,7 +21,7 @@ onMounted(() => {
 
 <template>
   <div class="relative flex justify-center mt-52">
-    <div class="absolute flex flex-col items-center w-10/12 max-w-[340px] bg-dark-blue text-pale-blue p-7 rounded-lg">
+    <div class="absolute flex flex-col items-center w-10/12 lg:h-36 lg:mt-[22px] max-w-[340px] lg:max-w-[600px] lg:mr-[40px] xl:mr-[180px] 2xl:mr-[340px] bg-dark-blue text-pale-blue p-7 rounded-lg lg:items-start">
       <p class="text-sm font-light">
         You've used
         <span class="font-bold">
@@ -46,7 +46,7 @@ onMounted(() => {
           <span class="text-sm"> GB</span>
         </span>
       </div>
-      <div class="absolute top-32 w-3/5 p-5 bg-white font-bold rounded-lg">
+      <div class="absolute triangle top-32 w-3/5 p-5 bg-white font-bold rounded-lg lg:w-52 lg:p-4 lg:-top-12 lg:right-8">
         <div class="flex items-center justify-center">
           <span class="text-black text-4xl">1</span>
           <span class="text-black text-4xl number-up">8</span>
@@ -117,5 +117,23 @@ onMounted(() => {
 
 .custom-slider::-webkit-slider-runnable-track {
   border-radius: 20px;
+}
+
+.triangle::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid white;
+  border-top: 20px solid white;
+  border-bottom: 20px solid transparent;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .triangle::after {
+    display: block;
+  }
 }
 </style>

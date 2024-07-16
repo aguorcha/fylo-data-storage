@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <div class="relative flex justify-center pt-40">
-    <div class="absolute flex flex-col items-start w-10/12 max-w-[340px] bg-dark-blue p-10 rounded-tl-lg rounded-tr-[100px] rounded-br-lg rounded-bl-lg">
+  <div class="relative flex justify-center pt-40 ">
+    <div class="absolute flex flex-col items-start w-10/12 max-w-[340px] lg:ml-[200px] bg-dark-blue p-10 rounded-tl-lg rounded-tr-[100px] rounded-br-lg rounded-bl-lg">
       <div>
         <img class="w-32" src="../assets/images/logo.svg" alt="Logo Fylo">
       </div>
