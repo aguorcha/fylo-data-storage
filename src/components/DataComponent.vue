@@ -6,8 +6,8 @@ const slider = ref(null);
 function updateSliderStyle(event) {
   const target = event.target;
   const value = target.value;
-  const min = target.min || 0;
-  const max = target.max || 100;
+  const min = target.min;
+  const max = target.max;
   const percentage = ((value - min) / (max - min)) * 100;
   
   target.style.background = `linear-gradient(to right, hsl(6, 100%, 80%) 0%, hsl(335, 100%, 65%) ${percentage}%, hsl(229, 57%, 11%) ${percentage}%)`;
@@ -17,6 +17,11 @@ onMounted(() => {
   const event = new Event('input');
   slider.value.dispatchEvent(event);
 });
+
+// document.getElementById('fixedRange').addEventListener('input', function(event){
+//   event.preventDefault();
+//   this.value = 815;
+// });
 </script>
 
 <template>
@@ -24,15 +29,17 @@ onMounted(() => {
     <div class="absolute flex flex-col items-center w-10/12 lg:h-36 lg:mt-[22px] max-w-[340px] lg:max-w-[600px] lg:mr-[40px] xl:mr-[180px] 2xl:mr-[340px] bg-dark-blue text-pale-blue p-7 rounded-lg lg:items-start">
       <p class="text-sm font-light">
         You've used
-        <span class="font-bold">
-          8<span class="number-down">1</span><span class="number-down-more">5</span> GB
-        </span>
-        of your storage
+        <span class="font-bold">8</span>
+        <span class="font-bold number-down">1</span>
+        <span class="font-bold number-down-more">5</span> 
+        GB of your storage
       </p>
       <input
+        disabled
         ref="slider"
         class="range-slider custom-slider" 
         type="range"
+        id="fixedRange"
         @input="updateSliderStyle"
         min="0"
         max="1000"
@@ -56,7 +63,6 @@ onMounted(() => {
       </div>
     </div>
   </div>
-  
 </template>
 
 <style scoped>
@@ -86,16 +92,12 @@ onMounted(() => {
   border-radius: 20px;
 }
 
-.range-slider:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
 .range-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
+  margin-top: 1px;
   background: white;
   border-radius: 100%;
   opacity: 1;
@@ -116,7 +118,7 @@ onMounted(() => {
 }
 
 .custom-slider::-webkit-slider-runnable-track {
-  border-radius: 20px;
+  margin-right: -2px;
 }
 
 .triangle::after {
