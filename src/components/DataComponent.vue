@@ -17,11 +17,6 @@ onMounted(() => {
   const event = new Event('input');
   slider.value.dispatchEvent(event);
 });
-
-// document.getElementById('fixedRange').addEventListener('input', function(event){
-//   event.preventDefault();
-//   this.value = 815;
-// });
 </script>
 
 <template>
